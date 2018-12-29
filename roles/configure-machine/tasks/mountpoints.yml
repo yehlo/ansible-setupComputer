@@ -1,0 +1,15 @@
+---
+- name: create mountpoint for nas-LinuxHome
+  file: 
+    path: "{{ item.value.dst }}"
+    state: directory
+  loop: "{{ lookup('dict', mountpoints) }}"
+
+- name: mount all defined mountpoints
+  mount:
+    path: "{{ item.value.dst }}"
+    src: "{{ item.value.src }}"
+    fstype: "{{ item.value.fstype }}"
+    opts: "{{ item.value.options }}"
+    state: present
+  loop: "{{ lookup('dict', mountpoints) }}"

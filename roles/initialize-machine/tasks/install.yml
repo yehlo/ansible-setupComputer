@@ -1,0 +1,21 @@
+---
+- name: install dnf packages 
+  dnf: 
+    name: "{{ dnf_packages }}"
+    state: present
+
+- name: install pip modules as root 
+  pip:
+    name: "{{ pip_modules_root }}"
+    state: present
+
+- name: install pip modules as current user
+  become: no
+  pip:
+    name: "{{ pip_modules }}"
+    state: present
+
+- name: Autoremove unneeded packages installed as dependencies
+  dnf:
+    autoremove: yes
+  

@@ -1,0 +1,69 @@
+---
+mountpoints: 
+  mount_nas: 
+    dst: /mnt/homeBackup
+    src: nas:/volume1/LinuxHome/backup
+    fstype: nfs4
+    options: ""
+  mount_dataShare:
+    dst: /mnt/data
+    src: "//nas/data"
+    fstype: cifs
+    options: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          64636236663535373966393034353863353766626633353034326431333030346632643130613064
+          3732663964646538363134396564643936333166653564330a306637663938656239633231333262
+          62666436353330626239633664393262316664386335613363666336393038393666353365653436
+          6564383533356235300a326662316334356231333939656665613936323430646232646232626535
+          32333731636330646663623462313138333138666163636632653036643933633764363133626564
+          31626665313165386361396462326635313736653733326639336365336232383634373066313338
+          363230313735653466613339633665616638
+
+    
+# temporary, maybe I can make zsh configuration work
+zsh_configuration: 
+  plugins: 
+    - git 
+    - docker
+    - ansible 
+    - kubernetes
+  theme: rkj-repos
+
+gnome_configuration: 
+  gtk_theme: 
+    key: '/org/gnome/desktop/interface/gtk-theme'
+    value: "'Numix'"
+  icon_theme: 
+    key: '/org/gnome/desktop/interface/icon-theme'
+    value: "'Numix-Circle-Light'"
+  show_battery_percentage: 
+    key: '/org/gnome/desktop/interface/show-battery-percentage'
+    value: 'true'
+  toolbar_style: 
+    key: '/org/gnome/desktop/interface/toolbar-style'
+    value: "'both-horiz'"
+  clock_show_weekday: 
+    key:  '/org/gnome/desktop/interface/clock-show-weekday'
+    value: 'true'
+  gtk_enable_primary_paste: 
+    key: '/org/gnome/desktop/interface/gtk-enable-primary-paste'
+    value: 'true'
+  show_banners: 
+    key: '/org/gnome/desktop/show-banners'
+    value: 'false'
+  button_layout: 
+    key: '/org/gnome/desktop/wm/preferences/button-layout'
+    value: "'appmenu:minimize,maximize,close'"
+  night_light_enabled: 
+    key: '/org/gnome/settings-daemon/plugins/color/night-light-enabled'
+    value: 'true'
+
+gnome_extension_ids:
+  - 15
+  - 779
+  - 945
+  - 307
+  - 1128
+  - 600
+  - 118
+  - 427

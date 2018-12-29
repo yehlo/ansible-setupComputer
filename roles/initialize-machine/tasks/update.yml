@@ -1,0 +1,5 @@
+---
+- name: update my computer
+  package:
+    name: "*"
+    state: latest

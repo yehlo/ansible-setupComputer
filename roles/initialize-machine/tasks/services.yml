@@ -1,0 +1,14 @@
+---
+- name: start tlp
+  command: tlp start
+
+- name: copying powertop service file to /usr/lib/systemd/user 
+  template: 
+    src: powertop.service.j2
+    dest: /usr/lib/systemd/user/powertop.service
+
+- name: starting powertop service
+  service: 
+    name: powertop.service
+    state: started
+    enabled: yes

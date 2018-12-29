@@ -1,0 +1,13 @@
+---
+- name: add rpm keys
+  rpm_key:
+    state: present
+    key: https://packages.microsoft.com/keys/microsoft.asc
+
+- name: Add rpm repositories
+  dnf:
+    name: "{{ rpm_repositories }}"
+    state: present
+
+- name: add vcode studio repo
+  script: addVcodeStudio.sh

@@ -1,0 +1,20 @@
+---
+- name: backup old .zshrc
+  shell: if [ -f ~/.zshrc ]; then mv ~/.zshrc ~/.zshrc.bak; fi
+  become: no 
+
+- name: clone oh-my-zsh repo from git
+  git: 
+    repo: https://github.com/robbyrussell/oh-my-zsh
+    dest: /tmp/oh-my-zsh
+  become: no
+
+- name: copy .zshrc template from git repo
+  copy:
+    src: ~/.oh-my-zsh/templates/zshrc.zsh-template
+    dest: ~/.zshrc
+  become: no
+  
+- name: set zsh as default shell
+  command: chsh -s /bin/zsh 
+  become: no 

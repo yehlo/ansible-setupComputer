@@ -1,0 +1,5 @@
+---
+- include: mountpoints.yml
+- include: ohMyZsh.yml
+- include: gnome.yml
+- include: extensions.yml

@@ -1,0 +1,45 @@
+---
+dnf_packages:
+  - gnome-tweak-tool
+  - grub-customizer
+  - numix-gtk-theme
+  - arc-theme
+  - numix-icon-theme-circle
+  - powertop
+  - python-pip
+  - tlp
+  - tlp-rdw
+  - shutter
+  - code
+  - vim
+  - git
+  - docker
+  - kubernetes
+  - zsh
+  - chrome-gnome-shell
+  - gstreamer-plugins-base
+  - gstreamer1-plugins-base
+  - gstreamer-plugins-bad
+  - gstreamer-plugins-ugly
+  - gstreamer1-plugins-ugly
+  - gstreamer-plugins-good-extras
+  - gstreamer1-plugins-good-extras
+  - gstreamer1-plugins-bad-freeworld
+  - ffmpeg
+  - gstreamer-ffmpeg
+  - redhat-rpm-config
+  - python-devel
+  - libselinux-python
+  - keepass
+
+rpm_repositories:
+  - https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-29.noarch.rpm
+  - https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-29.noarch.rpm
+
+pip_modules_root:
+  - psutil
+
+pip_modules:
+
+rpm_keys: 
+  - https://packages.microsoft.com/keys/microsoft.asc

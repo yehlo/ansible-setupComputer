@@ -1,0 +1,9 @@
+---
+- hosts: localhost  
+  become: yes
+  tasks: 
+    - name: run command
+      command: echo $HOSTNAME
+  roles: 
+    - initialize-machine
+    - configure-machine
