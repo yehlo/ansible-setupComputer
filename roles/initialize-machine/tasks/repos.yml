@@ -6,8 +6,17 @@
 
 - name: Add rpm repositories
   dnf:
-    name: "{{ rpm_repositories }}"
+    name: "{{ item }}"
     state: present
+  loop: "{{ rpm_repositories }}"
+  when: item is search('\\.rpm') 
 
-- name: add vcode studio repo
+- name: Add .repo files directly 
+  get_url:
+    url: "{{ item }}"
+    dest: /etc/yum.repos.d
+  loop: "{{ rpm_repositories }}"
+  when: item is search('\\.repo') 
+
+- name: add vcode studio repo   
   script: addVcodeStudio.sh
