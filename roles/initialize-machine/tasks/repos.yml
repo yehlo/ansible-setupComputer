@@ -19,4 +19,6 @@
   when: item is search('\\.repo') 
 
 - name: add vcode studio repo   
-  script: addVcodeStudio.sh
+  template:
+    src: vscode.repo.j2
+    dest: /etc/yum.repos.d/vscode.repo
