@@ -35,8 +35,10 @@ dnf_packages:
 ```
 
 ### rpm_repositories
-An array of all rpm repositories to be added. 
-The links need to end in .rpm 
+An array of all repositories to be added. 
+The links need to end in .rpm or .repo
+
+If the link ends in .repo ansible makes use of get_url and downloads the file directly into /etc/yum.repos.d/file.repo
 
 ```yaml
 rpm_repositories:
